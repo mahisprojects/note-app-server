@@ -1,5 +1,10 @@
 {
     "version": 2,
+    "build": {
+        "env": {
+            "NODE_PATH": "./src"
+        }
+    },
     "builds": [
         {
             "src": "src/server.ts",
