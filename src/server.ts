@@ -1,4 +1,4 @@
-import application from "application";
+import application from "./application";
 import http from "http";
 
 const PORT = process.env.PORT;
