@@ -5,9 +5,12 @@ const PORT = process.env.PORT;
 ((): void => {
   const server = http.createServer(application!);
 
-  server.listen(PORT, (): boolean =>
-    process.stdout.write(
-      `⚡️[Note-server]: Server is running at http://localhost:${PORT}\n`
-    )
-  );
+  // server.listen(PORT, (): boolean =>
+  //   process.stdout.write(
+  //     `⚡️[Note-server]: Server is running at http://localhost:${PORT}\n`
+  //   )
+  // );
 })();
+
+// vercel build
+export default application;
