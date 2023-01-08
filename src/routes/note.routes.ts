@@ -3,6 +3,7 @@ import { verifyToken } from "../common/middleware/verifyToken";
 import { requireAuthentication } from "../common/middleware/require-auth";
 
 import {
+  clearTrashHandler,
   createNoteHandler,
   deleteNoteHandler,
   getNoteById,
@@ -10,7 +11,7 @@ import {
   trashNoteHandler,
   updateNoteHandler,
 } from "../controllers//note.controller";
-import Storage from "../common/middleware/storage";
+// import Storage from "../common/middleware/storage";
 
 const router = express.Router();
 
@@ -24,5 +25,7 @@ router.patch("/note/:id", userAreaHandler, updateNoteHandler);
 
 router.delete("/note/:id/trash", userAreaHandler, trashNoteHandler);
 router.delete("/note/:id", userAreaHandler, deleteNoteHandler);
+
+router.delete("/trash", userAreaHandler, clearTrashHandler);
 
 export default router;

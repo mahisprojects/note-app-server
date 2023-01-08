@@ -101,7 +101,6 @@ export async function deleteNoteHandler(req: Request, res: Response, next) {
   const user = req.currentUser?.id;
   const { id } = req.params;
   const { force } = req.body;
-  // if filename is passed use it to delete file
   try {
     const existNote = await noteModel.findById(id);
     if (
@@ -114,6 +113,20 @@ export async function deleteNoteHandler(req: Request, res: Response, next) {
       return;
     }
     await existNote.deletePermanently();
+    res.end();
+  } catch (error) {
+    next(new BadRequestError("Failed to delete!"));
+  }
+}
+
+export async function clearTrashHandler(req: Request, res: Response, next) {
+  const user = req.currentUser?.id;
+  try {
+    const trashNotes = await noteModel.find({ trash: true, user });
+    for await (const note of trashNotes) {
+      await note.delete();
+    }
+
     res.end();
   } catch (error) {
     next(new BadRequestError("Failed to delete!"));
