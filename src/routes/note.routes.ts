@@ -1,6 +1,6 @@
 import express from "express";
-import { verifyToken } from "common/middleware/verifyToken";
-import { requireAuthentication } from "common/middleware/require-auth";
+import { verifyToken } from "../common/middleware/verifyToken";
+import { requireAuthentication } from "../common/middleware/require-auth";
 
 import {
   createNoteHandler,
@@ -9,8 +9,8 @@ import {
   getNotes,
   trashNoteHandler,
   updateNoteHandler,
-} from "controllers/note.controller";
-import Storage from "common/middleware/storage";
+} from "../controllers//note.controller";
+import Storage from "../common/middleware/storage";
 
 const router = express.Router();
 

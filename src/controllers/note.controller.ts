@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
-import { BadRequestError } from "common/errors/bad-request-error";
-import { noteModel } from "models/note.model";
-import { NotFoundError } from "common/errors/not-found-error";
-import { userModel } from "models/user.model";
+import { BadRequestError } from "../common/errors/bad-request-error";
+import { noteModel } from "../models/note.model";
+import { NotFoundError } from "../common/errors/not-found-error";
+import { userModel } from "../models/user.model";
 
 export async function createNoteHandler(req: Request, res: Response, next) {
   try {

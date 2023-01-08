@@ -1,9 +1,9 @@
 import { Router } from "express";
-import userController, { getUserById } from "controllers/user.controller";
-import { authorization } from "common/middleware/authorization";
-import { verifyToken } from "common/middleware/verifyToken";
-import { requireAuthentication } from "common/middleware/require-auth";
-// import { getStorageQuota } from "controllers/note.controller";
+import userController, { getUserById } from "../controllers//user.controller";
+import { authorization } from "../common/middleware/authorization";
+import { verifyToken } from "../common/middleware/verifyToken";
+import { requireAuthentication } from "../common/middleware/require-auth";
+// import { getStorageQuota } from "../controllers//note.controller";
 
 const router = Router();
 

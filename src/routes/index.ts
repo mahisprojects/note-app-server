@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { NotFoundError } from "common/errors/not-found-error";
-import { errorHandler } from "common/middleware/error-handler";
+import { NotFoundError } from "../common/errors/not-found-error";
+import { errorHandler } from "../common/middleware/error-handler";
 
 import express from "express";
 import AccountRouter from "./account.routes";

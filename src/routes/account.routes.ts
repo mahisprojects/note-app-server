@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { requireAuthentication } from "common/middleware/require-auth";
-import { verifyToken } from "common/middleware/verifyToken";
-import userController from "controllers/user.controller";
+import { requireAuthentication } from "../common/middleware/require-auth";
+import { verifyToken } from "../common/middleware/verifyToken";
+import userController from "../controllers//user.controller";
 
 const router = Router();
 

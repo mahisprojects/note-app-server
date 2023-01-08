@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { userModel } from "models/user.model";
+import { userModel } from "../models/user.model";
 import { sign } from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 

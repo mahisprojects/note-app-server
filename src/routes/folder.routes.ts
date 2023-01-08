@@ -1,14 +1,14 @@
 import express from "express";
-import { verifyToken } from "common/middleware/verifyToken";
-import { requireAuthentication } from "common/middleware/require-auth";
+import { verifyToken } from "../common/middleware/verifyToken";
+import { requireAuthentication } from "../common/middleware/require-auth";
 
-import NoteStorage from "common/middleware/storage";
+import NoteStorage from "../common/middleware/storage";
 import {
   createFolderHandler,
   getFolderById,
   getFolders,
   updateFolderHandler,
-} from "controllers/folder.controller";
+} from "./../controllers/folder.controller";
 
 const router = express.Router();
 const storage = new NoteStorage({});

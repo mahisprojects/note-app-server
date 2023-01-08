@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { BadRequestError } from "common/errors/bad-request-error";
-import { NotFoundError } from "common/errors/not-found-error";
+import { BadRequestError } from "../common/errors/bad-request-error";
+import { NotFoundError } from "../common/errors/not-found-error";
 import { folderModel } from "../models/folder.model";
 import { noteModel } from "../models/note.model";
 

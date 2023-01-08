@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import { userModel } from "models/user.model";
+import { userModel } from "../../models/user.model";
 import { UnauthorizedError } from "../errors/unauthorized-error";
 export const requireAuthentication = async (
   req: Request,

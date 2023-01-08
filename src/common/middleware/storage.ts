@@ -1,6 +1,6 @@
 import multer, { Multer } from "multer";
 import fs from "fs/promises";
-import { BadRequestError } from "common/errors/bad-request-error";
+import { BadRequestError } from "../../common/errors/bad-request-error";
 // import fs from "fs";
 class NoteStorage {
   protected uploadDir: string = "";
