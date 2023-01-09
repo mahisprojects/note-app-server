@@ -19,11 +19,14 @@ export async function createNoteHandler(req: Request, res: Response, next) {
 export async function getNotes(req: Request, res: Response) {
   const user = req.currentUser?.id;
   try {
-    const { trash } = req.query;
+    const { trash, favorites } = req.query;
+    let query = {};
+    if (favorites) query["favorite"] = true;
     const notes = await noteModel.find({
       folder: null,
       trash: trash ?? false,
       user,
+      ...query,
     });
     res.send(notes);
   } catch (error) {

@@ -52,6 +52,9 @@ export class Note {
   @prop({ required: false, default: false })
   public trash: boolean;
 
+  @prop({ required: false, default: false })
+  public favorite: boolean;
+
   public isAdmin(this: DocumentType<Note>, userID: String) {
     if (this.user != null) return this.user?.toString() === userID;
     return false;
@@ -64,6 +67,11 @@ export class Note {
 
   public async restoreFromTrash(this: DocumentType<Note>) {
     this.trash = false;
+    return await this.save();
+  }
+
+  public async toggleFavorite(this: DocumentType<Note>) {
+    this.favorite = !this.favorite;
     return await this.save();
   }
 
